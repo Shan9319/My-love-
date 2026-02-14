@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Forever Valentine ❤️</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --primary-pink: #ff4d6d;
+            --soft-pink: #fff0f3;
+            --dark-pink: #800f2f;
+        }
+
+        body {
+            background-color: var(--soft-pink);
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .container {
+            max-width: 450px;
+            width: 85%;
+            background: white;
+            padding: 30px;
+            border-radius: 30px;
+            box-shadow: 0 20px 40px rgba(255, 77, 109, 0.2);
+            border: 2px solid #ffccd5;
+            position: relative;
+            z-index: 10;
+        }
+
+        .section {
+            display: none;
+            animation: fadeIn 0.8s ease-in-out;
+        }
+
+        .active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        img {
+            width: 100%;
+            max-width: 250px;
+            border-radius: 20px;
+            margin-bottom: 20px;
+            object-fit: cover;
+        }
+
+        .eyes-frame {
+            border: 8px double var(--primary-pink);
+            padding: 5px;
+            background: white;
+        }
+
+        h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 30px;
+            color: var(--primary-pink);
+            margin: 10px 0;
+        }
+
+        p {
+            font-size: 15px;
+            line-height: 1.6;
+            color: var(--dark-pink);
+        }
+
+        .btn-wrapper {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            min-height: 50px;
+        }
+
+        .btn {
+            background: var(--primary-pink);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: 0.3s;
+            white-space: nowrap;
+            z-index: 100;
+        }
+
+        .no-btn {
+            background: #94a3b8;
+            transition: 0.1s ease;
+            position: relative;
+            z-index: 999;
+        }
+
+        .btn.moving {
+            position: fixed;
+        }
+
+        .letter {
+            text-align: left;
+            background: var(--soft-pink);
+            padding: 20px;
+            border-radius: 15px;
+            font-style: italic;
+            border-left: 4px solid var(--primary-pink);
+            font-size: 14px;
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 480px) {
+            .container {
+                padding: 20px;
+                width: 90%;
+            }
+
+            h1 {
+                font-size: 26px;
+            }
+
+            p {
+                font-size: 14px;
+            }
+
+            .btn {
+                padding: 10px 20px;
+                font-size: 14px;
+            }
+
+            img {
+                max-width: 200px;
+                margin-bottom: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="section active" id="step1">
+            <img src="assets/cute.gif" alt="Cute Welcome">
+            <p style="font-weight:bold; font-size: 12px; color: grey; letter-spacing: 1px;">DEDICATED TO</p>
+            <h1>Miss Bushra Shams</h1>
+            <p>I have prepared something special for you. May I have the honor to proceed, Ma'am?</p>
+            <div class="btn-wrapper">
+                <button class="btn" onclick="next(2)">Yes, Please ✨</button>
+                <button class="btn no-btn" onmouseover="moveBtn(this)" onclick="moveBtn(this)"
+                    ontouchstart="moveBtn(this)">No 🙄</button>
+            </div>
+        </div>
+
+        <div class="section" id="step2">
+            <img src="assets/eyes.jpg" class="eyes-frame" alt="The Eyes">
+            <h1>Dear Miss Beautiful...</h1>
+            <p>Your eyes are like a beautiful poem I could read forever. This specific gaze is where I find my peace and
+                my entire world.</p>
+            <div class="btn-wrapper">
+                <button class="btn" onclick="next(3)">Next... 😍</button>
+                <button class="btn no-btn" onmouseover="moveBtn(this)" onclick="moveBtn(this)"
+                    ontouchstart="moveBtn(this)">No 🙈</button>
+            </div>
+        </div>
+
+        <div class="section" id="step3">
+            <img src="assets/kiss.gif" alt="Love">
+            <h1>Miss Adorable,</h1>
+            <p>The way you handle life with such grace makes me incredibly proud. You are my strength, my joy, and my
+                greatest inspiration.</p>
+            <div class="btn-wrapper">
+                <button class="btn" onclick="next(4)">Read my note 📝</button>
+                <button class="btn no-btn" onmouseover="moveBtn(this)" onclick="moveBtn(this)"
+                    ontouchstart="moveBtn(this)">No 😤</button>
+            </div>
+        </div>
+
+        <div class="section" id="step4">
+            <h1>A Heartfelt Note</h1>
+            <div class="letter">
+                My Dearest,<br><br>
+                Words often fail me when I try to describe what you mean to me. You are the heartbeat of my life. Thank
+                you for choosing me every single day.<br><br>
+                With Eternal Love.
+            </div>
+            <div class="btn-wrapper">
+                <button class="btn" onclick="next(5)">One Last Thing... 💍</button>
+                <button class="btn no-btn" onmouseover="moveBtn(this)" onclick="moveBtn(this)"
+                    ontouchstart="moveBtn(this)">No 🤐</button>
+            </div>
+        </div>
+
+        <div class="section" id="step5">
+            <img src="assets/rabbit.gif" id="propImage" alt="Wait...">
+            <h1>The Question...</h1>
+            <p>Will you make me the luckiest man and be my Valentine, <b>My Queen?</b></p>
+            <div class="btn-wrapper">
+                <button class="btn" id="yesBtn" onclick="next(6)">YES! ❤️</button>
+                <button class="btn no-btn" id="mainNoBtn" onmouseover="moveBtn(this)" onclick="moveBtn(this)"
+                    ontouchstart="moveBtn(this)">No</button>
+            </div>
+        </div>
+
+        <div class="section" id="step6">
+            <img src="assets/hearts.gif.webp" alt="Success">
+            <h1>Begum Sahiba! ❤️</h1>
+            <p>Thank you for saying YES! I promise to cherish every moment with you. Happy Valentine's Day to my one and
+                only! 😘</p>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script>
+        function next(id) {
+            document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+            document.getElementById('step' + id).classList.add('active');
+            if (id === 6) { launchConfetti(); }
+        }
+
+        function moveBtn(btn) {
+            btn.classList.add('moving');
+            const section = btn.closest('.section');
+            if (section && section.id === 'step5') {
+                document.getElementById('propImage').src = "assets/angry.gif";
+            }
+            const width = window.innerWidth;
+            const height = window.innerHeight;
+            const btnRect = btn.getBoundingClientRect();
+            // Add padding so it doesn't touch the very edge
+            const padding = 30;
+            const maxX = width - btnRect.width - padding;
+            const maxY = height - btnRect.height - padding;
+
+            // Random position but kept within safe bounds
+            // Ensure we subtract padding from min values too if needed, but Math.max(padding, ...) handles it
+            const randomX = Math.max(padding, Math.min(maxX, Math.random() * maxX));
+            const randomY = Math.max(padding, Math.min(maxY, Math.random() * maxY));
+
+            btn.style.left = randomX + 'px';
+            btn.style.top = randomY + 'px';
+        }
+
+        function launchConfetti() {
+            var duration = 5 * 1000;
+            var animationEnd = Date.now() + duration;
+            var defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 };
+            var random = (min, max) => Math.random() * (max - min) + min;
+            var interval = setInterval(function () {
+                var timeLeft = animationEnd - Date.now();
+                if (timeLeft <= 0) return clearInterval(interval);
+                var particleCount = 50 * (timeLeft / duration);
+                confetti(Object.assign({}, defaults, { particleCount, origin: { x: random(0.1, 0.3), y: Math.random() - 0.2 } }));
+                confetti(Object.assign({}, defaults, { particleCount, origin: { x: random(0.7, 0.9), y: Math.random() - 0.2 } }));
+            }, 250);
+        }
+    </script>
+</body>
+
+</html>
